@@ -3,10 +3,7 @@ pipeline {
   stages {
     stage('1') {
       steps {
-        script {
-          script scripts/build.sh
-        }
-
+        sh 'scripts/build.sh'
       }
     }
 
