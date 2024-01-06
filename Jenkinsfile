@@ -7,5 +7,11 @@ pipeline {
       }
     }
 
+    stage('2') {
+      steps {
+        sh '/scripts/build.sh'
+      }
+    }
+
   }
 }
