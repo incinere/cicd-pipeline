@@ -13,7 +13,9 @@ pipeline {
     stage('3') {
       steps {
         script {
-          sudo sh 'scripts/build.sh'
+
+          sh 'chmod +x scripts/build.sh'
+          sh 'scripts/build.sh'
         }
 
       }
