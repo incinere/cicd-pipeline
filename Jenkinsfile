@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('1') {
       steps {
-        sh 'checkout scm'
+        echo 'sdfhgjh,b.,n,mvnc'
       }
     }
 
