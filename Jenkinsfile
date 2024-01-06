@@ -28,5 +28,17 @@ pipeline {
       }
     }
 
+    stage('5') {
+      steps {
+        script {
+          docker.build("${registry}:${env.Build_ID}")
+        }
+
+      }
+    }
+
+  }
+  environment {
+    registry = 'incinere/test'
   }
 }
