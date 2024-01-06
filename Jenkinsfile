@@ -3,7 +3,10 @@ pipeline {
   stages {
     stage('1') {
       steps {
-        echo 'sdfhgjh,b.,n,mvnc'
+        script {
+          script scripts/build.sh
+        }
+
       }
     }
 
