@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('1') {
       steps {
-        sh '''#!/bin/bash
-npm install'''
+        git(url: 'https://github.com/incinere/cicd-pipeline/edit/main/Jenkinsfile', branch: 'main', credentialsId: 'github_id')
       }
     }
 
