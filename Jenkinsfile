@@ -19,5 +19,14 @@ pipeline {
       }
     }
 
+    stage('4') {
+      steps {
+        script {
+          sh 'scripts/test.sh'
+        }
+
+      }
+    }
+
   }
 }
