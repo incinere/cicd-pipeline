@@ -13,7 +13,7 @@ pipeline {
     stage('3') {
       steps {
         script {
-          sh 'scripts/build.sh'
+          sudo sh 'scripts/build.sh'
         }
 
       }
