@@ -5,6 +5,8 @@ pipeline {
       steps {
         script {
           checkout scm
+          sh 'chmod +x scripts/build.sh'
+
         }
 
       }
@@ -13,8 +15,6 @@ pipeline {
     stage('2') {
       steps {
         script {
-
-          sh 'chmod +x scripts/build.sh'
           sh 'scripts/build.sh'
         }
 
