@@ -4,7 +4,7 @@ pipeline {
     stage('2') {
       steps {
         script {
-          sh 'chmod +x scripts/build.sh'
+          checkout scm
         }
 
       }
