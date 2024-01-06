@@ -1,17 +1,32 @@
 pipeline {
   agent any
   stages {
-    stage('2') {
+    stage('Git checkout') {
       steps {
-        sh './scripts/build.sh'
+        script {
+          checkout scm
+        }
+
       }
     }
 
-    stage('3') {
+    stage('Application Build') {
       steps {
-        sh './scripts/test.sh'
+        script {
+          sh 'chmod +x scripts/build.sh'
+          sh 'scripts/build.sh'
+        }
+
       }
     }
 
-  }
-}
+    stage('Tests') {
+      steps {
+        script {
+          sh 'scripts/test.sh'
+        }
+
+      }
+    }
+ }
+} 
