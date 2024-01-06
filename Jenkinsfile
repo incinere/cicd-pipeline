@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('2') {
+    stage('1') {
       steps {
         script {
           checkout scm
@@ -10,7 +10,7 @@ pipeline {
       }
     }
 
-    stage('3') {
+    stage('2') {
       steps {
         script {
 
@@ -21,7 +21,7 @@ pipeline {
       }
     }
 
-    stage('4') {
+    stage('3') {
       steps {
         script {
           sh 'scripts/test.sh'
@@ -30,7 +30,7 @@ pipeline {
       }
     }
 
-    stage('5') {
+    stage('4') {
       steps {
         script {
           docker.build("${registry}:${env.Build_ID}")
@@ -39,7 +39,7 @@ pipeline {
       }
     }
 
-    stage('6') {
+    stage('5') {
       steps {
         script {
           docker.withRegistry('','dockerhub_id'){
